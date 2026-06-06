@@ -71,17 +71,17 @@
 
 # text = Toplantıdan erken çıkan öğrenci geldi.
 # columns = ID FORM OUTER_CHUNK INNER_CHUNK CLAUSE
-1 Toplantıdan B-NP B-RELCL B-RELCL
-2 erken I-NP I-RELCL I-RELCL
-3 çıkan I-NP I-RELCL I-RELCL
+1 Toplantıdan B-NP _ O
+2 erken B-ADVP _ O
+3 çıkan I-NP B-RELCL B-RELCL
 4 öğrenci I-NP _ O
 5 geldi B-VP _ O
 6 . O _ O
 
 # text = Hocanın önerdiği makale sınıfta tartışıldı.
 # columns = ID FORM OUTER_CHUNK INNER_CHUNK CLAUSE
-1 Hocanın B-NP B-RELCL B-RELCL
-2 önerdiği I-NP I-RELCL I-RELCL
+1 Hocanın B-NP _ B-RELCL
+2 önerdiği I-NP B-RELCL I-RELCL
 3 makale I-NP _ O
 4 sınıfta B-NP _ O
 5 tartışıldı B-VP _ O
@@ -89,8 +89,8 @@
 
 # text = Öğretmenin hazırladığı sınav bugün yapıldı.
 # columns = ID FORM OUTER_CHUNK INNER_CHUNK CLAUSE
-1 Öğretmenin B-NP B-RELCL B-RELCL
-2 hazırladığı I-NP I-RELCL I-RELCL
+1 Öğretmenin B-NP _ B-RELCL
+2 hazırladığı I-NP B-RELCL I-RELCL
 3 sınav I-NP _ O
 4 bugün B-ADVP _ O
 5 yapıldı B-VP _ O
@@ -98,8 +98,8 @@
 
 # text = Müdürün imzaladığı belge arşive kaldırıldı.
 # columns = ID FORM OUTER_CHUNK INNER_CHUNK CLAUSE
-1 Müdürün B-NP B-RELCL B-RELCL
-2 imzaladığı I-NP I-RELCL I-RELCL
+1 Müdürün B-NP _ B-RELCL
+2 imzaladığı I-NP B-RELCL I-RELCL
 3 belge I-NP _ O
 4 arşive B-NP _ O
 5 kaldırıldı B-VP _ O
@@ -107,8 +107,8 @@
 
 # text = Dün gelen misafir kahveyi beğendi.
 # columns = ID FORM OUTER_CHUNK INNER_CHUNK CLAUSE
-1 Dün B-NP B-RELCL B-RELCL
-2 gelen I-NP I-RELCL I-RELCL
+1 Dün B-ADVP _ O
+2 gelen I-NP B-RELCL B-RELCL
 3 misafir I-NP _ O
 4 kahveyi B-NP _ O
 5 beğendi B-VP _ O
@@ -116,8 +116,8 @@
 
 # text = Parkta oynayan çocuk annesine seslendi.
 # columns = ID FORM OUTER_CHUNK INNER_CHUNK CLAUSE
-1 Parkta B-NP B-RELCL B-RELCL
-2 oynayan I-NP I-RELCL I-RELCL
+1 Parkta B-NP _ B-RELCL
+2 oynayan I-NP B-RELCL I-RELCL
 3 çocuk I-NP _ O
 4 annesine B-NP _ O
 5 seslendi B-VP _ O
@@ -125,8 +125,8 @@
 
 # text = Kütüphanede çalışan araştırmacı notlarını düzenledi.
 # columns = ID FORM OUTER_CHUNK INNER_CHUNK CLAUSE
-1 Kütüphanede B-NP B-RELCL B-RELCL
-2 çalışan I-NP I-RELCL I-RELCL
+1 Kütüphanede B-NP _ B-RELCL
+2 çalışan I-NP B-RELCL I-RELCL
 3 araştırmacı I-NP _ O
 4 notlarını B-NP _ O
 5 düzenledi B-VP _ O
@@ -134,9 +134,9 @@
 
 # text = Ayşe eve gelince annesi yemek hazırladı.
 # columns = ID FORM OUTER_CHUNK INNER_CHUNK CLAUSE
-1 Ayşe B-NP B-COMPCL B-COMPCL
-2 eve B-NP I-COMPCL I-COMPCL
-3 gelince B-VP I-COMPCL I-COMPCL
+1 Ayşe B-NP _ B-COMPCL
+2 eve B-NP _ I-COMPCL
+3 gelince B-VP B-COMPCL I-COMPCL
 4 annesi B-NP _ O
 5 yemek B-NP _ O
 6 hazırladı B-VP _ O
@@ -144,8 +144,8 @@
 
 # text = Yağmur başlayınca takım maçı erteledi.
 # columns = ID FORM OUTER_CHUNK INNER_CHUNK CLAUSE
-1 Yağmur B-NP B-COMPCL B-COMPCL
-2 başlayınca B-VP I-COMPCL I-COMPCL
+1 Yağmur B-NP _ B-COMPCL
+2 başlayınca B-VP B-COMPCL I-COMPCL
 3 takım B-NP _ O
 4 maçı B-NP _ O
 5 erteledi B-VP _ O
@@ -153,8 +153,8 @@
 
 # text = Ders bitince öğrenciler dışarı çıktı.
 # columns = ID FORM OUTER_CHUNK INNER_CHUNK CLAUSE
-1 Ders B-NP B-COMPCL B-COMPCL
-2 bitince B-VP I-COMPCL I-COMPCL
+1 Ders B-NP _ B-COMPCL
+2 bitince B-VP B-COMPCL I-COMPCL
 3 öğrenciler B-NP _ O
 4 dışarı B-ADVP _ O
 5 çıktı B-VP _ O
@@ -162,8 +162,8 @@
 
 # text = Sınav başlayınca herkes sessizce oturdu.
 # columns = ID FORM OUTER_CHUNK INNER_CHUNK CLAUSE
-1 Sınav B-NP B-COMPCL B-COMPCL
-2 başlayınca B-VP I-COMPCL I-COMPCL
+1 Sınav B-NP _ B-COMPCL
+2 başlayınca B-VP B-COMPCL I-COMPCL
 3 herkes B-NP _ O
 4 sessizce B-ADVP _ O
 5 oturdu B-VP _ O
@@ -171,8 +171,8 @@
 
 # text = Film bitince izleyiciler hızlıca ayrıldı.
 # columns = ID FORM OUTER_CHUNK INNER_CHUNK CLAUSE
-1 Film B-NP B-COMPCL B-COMPCL
-2 bitince B-VP I-COMPCL I-COMPCL
+1 Film B-NP _ B-COMPCL
+2 bitince B-VP B-COMPCL I-COMPCL
 3 izleyiciler B-NP _ O
 4 hızlıca B-ADVP _ O
 5 ayrıldı B-VP _ O
@@ -180,8 +180,8 @@
 
 # text = Öğretmen konuşurken öğrenciler dikkatlice dinledi.
 # columns = ID FORM OUTER_CHUNK INNER_CHUNK CLAUSE
-1 Öğretmen B-NP B-COMPCL B-COMPCL
-2 konuşurken B-VP I-COMPCL I-COMPCL
+1 Öğretmen B-NP _ B-COMPCL
+2 konuşurken B-VP B-COMPCL I-COMPCL
 3 öğrenciler B-NP _ O
 4 dikkatlice B-ADVP _ O
 5 dinledi B-VP _ O
@@ -218,9 +218,9 @@
 
 # text = Sabah erken gelen ekip sistemi kontrol etti.
 # columns = ID FORM OUTER_CHUNK INNER_CHUNK CLAUSE
-1 Sabah B-NP B-RELCL B-RELCL
-2 erken I-NP I-RELCL I-RELCL
-3 gelen I-NP I-RELCL I-RELCL
+1 Sabah B-ADVP _ O
+2 erken I-ADVP _ O
+3 gelen I-NP B-RELCL B-RELCL
 4 ekip I-NP _ O
 5 sistemi B-NP _ O
 6 kontrol B-VP _ O
@@ -229,10 +229,10 @@
 
 # text = Düzgün bir şekilde yazılan rapor kabul edildi.
 # columns = ID FORM OUTER_CHUNK INNER_CHUNK CLAUSE
-1 Düzgün B-NP B-RELCL B-RELCL
-2 bir I-NP I-RELCL I-RELCL
-3 şekilde I-NP I-RELCL I-RELCL
-4 yazılan I-NP I-RELCL I-RELCL
+1 Düzgün B-ADVP _ O
+2 bir I-ADVP _ O
+3 şekilde I-ADVP _ O
+4 yazılan I-NP B-RELCL B-RELCL
 5 rapor I-NP _ O
 6 kabul B-VP _ O
 7 edildi I-VP _ O
@@ -240,9 +240,9 @@
 
 # text = Dün akşam biten toplantı verimli geçti.
 # columns = ID FORM OUTER_CHUNK INNER_CHUNK CLAUSE
-1 Dün B-NP B-RELCL B-RELCL
-2 akşam I-NP I-RELCL I-RELCL
-3 biten I-NP I-RELCL I-RELCL
+1 Dün B-ADVP _ O
+2 akşam I-ADVP _ O
+3 biten I-NP B-RELCL B-RELCL
 4 toplantı I-NP _ O
 5 verimli B-ADVP _ O
 6 geçti B-VP _ O
@@ -250,8 +250,8 @@
 
 # text = Bugün başlayan kurs yoğun ilgi gördü.
 # columns = ID FORM OUTER_CHUNK INNER_CHUNK CLAUSE
-1 Bugün B-NP B-RELCL B-RELCL
-2 başlayan I-NP I-RELCL I-RELCL
+1 Bugün B-ADVP _ O
+2 başlayan I-NP B-RELCL B-RELCL
 3 kurs I-NP _ O
 4 yoğun B-NP _ O
 5 ilgi I-NP _ O
@@ -264,7 +264,7 @@
 2 sınavdan B-NP _ O
 3 önce B-ADVP _ O
 4 dikkatlice B-ADVP _ O
-5 tekrar B-NP _ O
+5 tekrar B-ADVP _ O
 6 yaptı B-VP _ O
 7 . O _ O
 
@@ -316,8 +316,8 @@
 
 # text = Bahçede oynayan çocuk hızlıca eve döndü.
 # columns = ID FORM OUTER_CHUNK INNER_CHUNK CLAUSE
-1 Bahçede B-NP B-RELCL B-RELCL
-2 oynayan I-NP I-RELCL I-RELCL
+1 Bahçede B-NP _ B-RELCL
+2 oynayan I-NP B-RELCL I-RELCL
 3 çocuk I-NP _ O
 4 hızlıca B-ADVP _ O
 5 eve B-NP _ O
@@ -326,18 +326,18 @@
 
 # text = Öğretmenin anlattığı konu bugün tekrar edildi.
 # columns = ID FORM OUTER_CHUNK INNER_CHUNK CLAUSE
-1 Öğretmenin B-NP B-RELCL B-RELCL
-2 anlattığı I-NP I-RELCL I-RELCL
+1 Öğretmenin B-NP _ B-RELCL
+2 anlattığı I-NP B-RELCL I-RELCL
 3 konu I-NP _ O
 4 bugün B-ADVP _ O
-5 tekrar B-NP _ O
+5 tekrar B-ADVP _ O
 6 edildi B-VP _ O
 7 . O _ O
 
 # text = Ali gelmeden Ayşe hazırlık yaptı.
 # columns = ID FORM OUTER_CHUNK INNER_CHUNK CLAUSE
-1 Ali B-NP B-COMPCL B-COMPCL
-2 gelmeden B-VP I-COMPCL I-COMPCL
+1 Ali B-NP _ B-COMPCL
+2 gelmeden B-VP B-COMPCL I-COMPCL
 3 Ayşe B-NP _ O
 4 hazırlık B-NP _ O
 5 yaptı B-VP _ O
@@ -345,8 +345,8 @@
 
 # text = Toplantı başlamadan ekip notları dağıttı.
 # columns = ID FORM OUTER_CHUNK INNER_CHUNK CLAUSE
-1 Toplantı B-NP B-COMPCL B-COMPCL
-2 başlamadan B-VP I-COMPCL I-COMPCL
+1 Toplantı B-NP _ B-COMPCL
+2 başlamadan B-VP B-COMPCL I-COMPCL
 3 ekip B-NP _ O
 4 notları B-NP _ O
 5 dağıttı B-VP _ O
@@ -364,10 +364,10 @@
 
 # text = Akşam geç saatte başlayan yağmur trafiği yavaşlattı.
 # columns = ID FORM OUTER_CHUNK INNER_CHUNK CLAUSE
-1 Akşam B-NP B-RELCL B-RELCL
-2 geç I-NP I-RELCL I-RELCL
-3 saatte I-NP I-RELCL I-RELCL
-4 başlayan I-NP I-RELCL I-RELCL
+1 Akşam B-ADVP _ O
+2 geç I-ADVP _ O
+3 saatte I-ADVP _ O
+4 başlayan I-NP B-RELCL B-RELCL
 5 yağmur I-NP _ O
 6 trafiği B-NP _ O
 7 yavaşlattı B-VP _ O
@@ -376,8 +376,8 @@
 # text = Bugün toplantı bitince herkes hızlıca ayrıldı.
 # columns = ID FORM OUTER_CHUNK INNER_CHUNK CLAUSE
 1 Bugün B-ADVP _ O
-2 toplantı B-NP B-COMPCL B-COMPCL
-3 bitince B-VP I-COMPCL I-COMPCL
+2 toplantı B-NP _ B-COMPCL
+3 bitince B-VP B-COMPCL I-COMPCL
 4 herkes B-NP _ O
 5 hızlıca B-ADVP _ O
 6 ayrıldı B-VP _ O
@@ -385,8 +385,8 @@
 
 # text = Kardeşinin aldığı hediye Ayşe'yi mutlu etti.
 # columns = ID FORM OUTER_CHUNK INNER_CHUNK CLAUSE
-1 Kardeşinin B-NP B-RELCL B-RELCL
-2 aldığı I-NP I-RELCL I-RELCL
+1 Kardeşinin B-NP _ B-RELCL
+2 aldığı I-NP B-RELCL I-RELCL
 3 hediye I-NP _ O
 4 Ayşe'yi B-NP _ O
 5 mutlu B-NP _ O
@@ -395,8 +395,8 @@
 
 # text = Şirketin duyurduğu karar bugün uygulandı.
 # columns = ID FORM OUTER_CHUNK INNER_CHUNK CLAUSE
-1 Şirketin B-NP B-RELCL B-RELCL
-2 duyurduğu I-NP I-RELCL I-RELCL
+1 Şirketin B-NP _ B-RELCL
+2 duyurduğu I-NP B-RELCL I-RELCL
 3 karar I-NP _ O
 4 bugün B-ADVP _ O
 5 uygulandı B-VP _ O
@@ -404,17 +404,17 @@
 
 # text = Öğrenci eve dönerken müzik dinledi.
 # columns = ID FORM OUTER_CHUNK INNER_CHUNK CLAUSE
-1 Öğrenci B-NP B-COMPCL B-COMPCL
-2 eve B-NP I-COMPCL I-COMPCL
-3 dönerken B-VP I-COMPCL I-COMPCL
+1 Öğrenci B-NP _ B-COMPCL
+2 eve B-NP _ I-COMPCL
+3 dönerken B-VP B-COMPCL I-COMPCL
 4 müzik B-NP _ O
 5 dinledi B-VP _ O
 6 . O _ O
 
 # text = Çalışma bitince ekip sonucu açıkladı.
 # columns = ID FORM OUTER_CHUNK INNER_CHUNK CLAUSE
-1 Çalışma B-NP B-COMPCL B-COMPCL
-2 bitince B-VP I-COMPCL I-COMPCL
+1 Çalışma B-NP _ B-COMPCL
+2 bitince B-VP B-COMPCL I-COMPCL
 3 ekip B-NP _ O
 4 sonucu B-NP _ O
 5 açıkladı B-VP _ O
@@ -423,8 +423,8 @@
 # text = Bugün hava açınca çocuklar dışarı çıktı.
 # columns = ID FORM OUTER_CHUNK INNER_CHUNK CLAUSE
 1 Bugün B-ADVP _ O
-2 hava B-NP B-COMPCL B-COMPCL
-3 açınca B-VP I-COMPCL I-COMPCL
+2 hava B-NP _ B-COMPCL
+3 açınca B-VP B-COMPCL I-COMPCL
 4 çocuklar B-NP _ O
 5 dışarı B-ADVP _ O
 6 çıktı B-VP _ O
@@ -432,8 +432,8 @@
 
 # text = Dün hazırlanan dosya müdüre gönderildi.
 # columns = ID FORM OUTER_CHUNK INNER_CHUNK CLAUSE
-1 Dün B-NP B-RELCL B-RELCL
-2 hazırlanan I-NP I-RELCL I-RELCL
+1 Dün B-ADVP _ O
+2 hazırlanan I-NP B-RELCL B-RELCL
 3 dosya I-NP _ O
 4 müdüre B-NP _ O
 5 gönderildi B-VP _ O
@@ -441,9 +441,9 @@
 
 # text = Sabah erken başlayan ders verimli geçti.
 # columns = ID FORM OUTER_CHUNK INNER_CHUNK CLAUSE
-1 Sabah B-NP B-RELCL B-RELCL
-2 erken I-NP I-RELCL I-RELCL
-3 başlayan I-NP I-RELCL I-RELCL
+1 Sabah B-ADVP _ O
+2 erken I-ADVP _ O
+3 başlayan I-NP B-RELCL B-RELCL
 4 ders I-NP _ O
 5 verimli B-ADVP _ O
 6 geçti B-VP _ O
@@ -471,8 +471,8 @@
 
 # text = Araştırmacının topladığı veriler dikkatlice incelendi.
 # columns = ID FORM OUTER_CHUNK INNER_CHUNK CLAUSE
-1 Araştırmacının B-NP B-RELCL B-RELCL
-2 topladığı I-NP I-RELCL I-RELCL
+1 Araştırmacının B-NP _ B-RELCL
+2 topladığı I-NP B-RELCL I-RELCL
 3 veriler I-NP _ O
 4 dikkatlice B-ADVP _ O
 5 incelendi B-VP _ O
@@ -480,8 +480,8 @@
 
 # text = Akademisyenin yazdığı makale bugün dergide yayımlandı.
 # columns = ID FORM OUTER_CHUNK INNER_CHUNK CLAUSE
-1 Akademisyenin B-NP B-RELCL B-RELCL
-2 yazdığı I-NP I-RELCL I-RELCL
+1 Akademisyenin B-NP _ B-RELCL
+2 yazdığı I-NP B-RELCL I-RELCL
 3 makale I-NP _ O
 4 bugün B-ADVP _ O
 5 dergide B-NP _ O
@@ -490,8 +490,8 @@
 
 # text = Model eğitilirken doğruluk oranı dikkatlice izlendi.
 # columns = ID FORM OUTER_CHUNK INNER_CHUNK CLAUSE
-1 Model B-NP B-COMPCL B-COMPCL
-2 eğitilirken B-VP I-COMPCL I-COMPCL
+1 Model B-NP _ B-COMPCL
+2 eğitilirken B-VP B-COMPCL I-COMPCL
 3 doğruluk B-NP _ O
 4 oranı I-NP _ O
 5 dikkatlice B-ADVP _ O
@@ -500,9 +500,9 @@
 
 # text = Veriler temizlendikten sonra deney yeniden başlatıldı.
 # columns = ID FORM OUTER_CHUNK INNER_CHUNK CLAUSE
-1 Veriler B-NP B-COMPCL B-COMPCL
-2 temizlendikten B-VP I-COMPCL I-COMPCL
-3 sonra B-ADVP I-COMPCL I-COMPCL
+1 Veriler B-NP _ B-COMPCL
+2 temizlendikten B-VP B-COMPCL I-COMPCL
+3 sonra B-ADVP _ I-COMPCL
 4 deney B-NP _ O
 5 yeniden B-ADVP _ O
 6 başlatıldı B-VP _ O
@@ -510,8 +510,8 @@
 
 # text = Geliştiricinin kurduğu sistem hızlıca çalıştı.
 # columns = ID FORM OUTER_CHUNK INNER_CHUNK CLAUSE
-1 Geliştiricinin B-NP B-RELCL B-RELCL
-2 kurduğu I-NP I-RELCL I-RELCL
+1 Geliştiricinin B-NP _ B-RELCL
+2 kurduğu I-NP B-RELCL I-RELCL
 3 sistem I-NP _ O
 4 hızlıca B-ADVP _ O
 5 çalıştı B-VP _ O
@@ -519,8 +519,8 @@
 
 # text = Deney tamamlanınca araştırmacılar sonuçları karşılaştırdı.
 # columns = ID FORM OUTER_CHUNK INNER_CHUNK CLAUSE
-1 Deney B-NP B-COMPCL B-COMPCL
-2 tamamlanınca B-VP I-COMPCL I-COMPCL
+1 Deney B-NP _ B-COMPCL
+2 tamamlanınca B-VP B-COMPCL I-COMPCL
 3 araştırmacılar B-NP _ O
 4 sonuçları B-NP _ O
 5 karşılaştırdı B-VP _ O
@@ -528,9 +528,9 @@
 
 # text = Dün gece indirilen dosya düzgün bir şekilde açıldı.
 # columns = ID FORM OUTER_CHUNK INNER_CHUNK CLAUSE
-1 Dün B-NP B-RELCL B-RELCL
-2 gece I-NP I-RELCL I-RELCL
-3 indirilen I-NP I-RELCL I-RELCL
+1 Dün B-ADVP _ O
+2 gece I-ADVP _ O
+3 indirilen I-NP B-RELCL B-RELCL
 4 dosya I-NP _ O
 5 düzgün B-ADVP _ O
 6 bir I-ADVP _ O
@@ -540,8 +540,8 @@
 
 # text = Sunucu yavaşlayınca ekip hatayı hızla inceledi.
 # columns = ID FORM OUTER_CHUNK INNER_CHUNK CLAUSE
-1 Sunucu B-NP B-COMPCL B-COMPCL
-2 yavaşlayınca B-VP I-COMPCL I-COMPCL
+1 Sunucu B-NP _ B-COMPCL
+2 yavaşlayınca B-VP B-COMPCL I-COMPCL
 3 ekip B-NP _ O
 4 hatayı B-NP _ O
 5 hızla B-ADVP _ O
@@ -550,8 +550,8 @@
 
 # text = Öğrencinin çözdüğü problem sınıfta tartışıldı.
 # columns = ID FORM OUTER_CHUNK INNER_CHUNK CLAUSE
-1 Öğrencinin B-NP B-RELCL B-RELCL
-2 çözdüğü I-NP I-RELCL I-RELCL
+1 Öğrencinin B-NP _ B-RELCL
+2 çözdüğü I-NP B-RELCL I-RELCL
 3 problem I-NP _ O
 4 sınıfta B-NP _ O
 5 tartışıldı B-VP _ O
@@ -559,9 +559,9 @@
 
 # text = Sabah erken başlayan sınav sessizce sürdü.
 # columns = ID FORM OUTER_CHUNK INNER_CHUNK CLAUSE
-1 Sabah B-NP B-RELCL B-RELCL
-2 erken I-NP I-RELCL I-RELCL
-3 başlayan I-NP I-RELCL I-RELCL
+1 Sabah B-ADVP _ O
+2 erken I-ADVP _ O
+3 başlayan I-NP B-RELCL B-RELCL
 4 sınav I-NP _ O
 5 sessizce B-ADVP _ O
 6 sürdü B-VP _ O
@@ -569,8 +569,8 @@
 
 # text = Kod derlenince uygulama hemen açıldı.
 # columns = ID FORM OUTER_CHUNK INNER_CHUNK CLAUSE
-1 Kod B-NP B-COMPCL B-COMPCL
-2 derlenince B-VP I-COMPCL I-COMPCL
+1 Kod B-NP _ B-COMPCL
+2 derlenince B-VP B-COMPCL I-COMPCL
 3 uygulama B-NP _ O
 4 hemen B-ADVP _ O
 5 açıldı B-VP _ O
@@ -578,8 +578,8 @@
 
 # text = Projenin kullandığı veri seti dikkatlice etiketlendi.
 # columns = ID FORM OUTER_CHUNK INNER_CHUNK CLAUSE
-1 Projenin B-NP B-RELCL B-RELCL
-2 kullandığı I-NP I-RELCL I-RELCL
+1 Projenin B-NP _ B-RELCL
+2 kullandığı I-NP B-RELCL I-RELCL
 3 veri I-NP _ O
 4 seti I-NP _ O
 5 dikkatlice B-ADVP _ O
@@ -598,8 +598,8 @@
 
 # text = Rapor yazılırken kaynaklar düzgün bir şekilde belirtildi.
 # columns = ID FORM OUTER_CHUNK INNER_CHUNK CLAUSE
-1 Rapor B-NP B-COMPCL B-COMPCL
-2 yazılırken B-VP I-COMPCL I-COMPCL
+1 Rapor B-NP _ B-COMPCL
+2 yazılırken B-VP B-COMPCL I-COMPCL
 3 kaynaklar B-NP _ O
 4 düzgün B-ADVP _ O
 5 bir I-ADVP _ O
@@ -609,8 +609,8 @@
 
 # text = Hocanın verdiği örnek öğrenciler tarafından incelendi.
 # columns = ID FORM OUTER_CHUNK INNER_CHUNK CLAUSE
-1 Hocanın B-NP B-RELCL B-RELCL
-2 verdiği I-NP I-RELCL I-RELCL
+1 Hocanın B-NP _ B-RELCL
+2 verdiği I-NP B-RELCL I-RELCL
 3 örnek I-NP _ O
 4 öğrenciler B-NP _ O
 5 tarafından I-NP _ O
@@ -619,9 +619,9 @@
 
 # text = Sistem hata verince günlük dosyası dikkatlice okundu.
 # columns = ID FORM OUTER_CHUNK INNER_CHUNK CLAUSE
-1 Sistem B-NP B-COMPCL B-COMPCL
-2 hata B-NP I-COMPCL I-COMPCL
-3 verince B-VP I-COMPCL I-COMPCL
+1 Sistem B-NP _ B-COMPCL
+2 hata B-NP _ I-COMPCL
+3 verince B-VP B-COMPCL I-COMPCL
 4 günlük B-NP _ O
 5 dosyası I-NP _ O
 6 dikkatlice B-ADVP _ O
@@ -641,9 +641,9 @@
 
 # text = Geçen hafta toplanan ölçümler bugün analiz edildi.
 # columns = ID FORM OUTER_CHUNK INNER_CHUNK CLAUSE
-1 Geçen B-NP B-RELCL B-RELCL
-2 hafta I-NP I-RELCL I-RELCL
-3 toplanan I-NP I-RELCL I-RELCL
+1 Geçen B-ADVP _ O
+2 hafta I-ADVP _ O
+3 toplanan I-NP B-RELCL B-RELCL
 4 ölçümler I-NP _ O
 5 bugün B-ADVP _ O
 6 analiz B-VP _ O
@@ -652,9 +652,9 @@
 
 # text = Kullanıcı formu doldurunca sistem bildirimi gönderdi.
 # columns = ID FORM OUTER_CHUNK INNER_CHUNK CLAUSE
-1 Kullanıcı B-NP B-COMPCL B-COMPCL
-2 formu B-NP I-COMPCL I-COMPCL
-3 doldurunca B-VP I-COMPCL I-COMPCL
+1 Kullanıcı B-NP _ B-COMPCL
+2 formu B-NP _ I-COMPCL
+3 doldurunca B-VP B-COMPCL I-COMPCL
 4 sistem B-NP _ O
 5 bildirimi B-NP _ O
 6 gönderdi B-VP _ O
@@ -662,8 +662,8 @@
 
 # text = Dün yapılan toplantıda kararlar açıkça duyuruldu.
 # columns = ID FORM OUTER_CHUNK INNER_CHUNK CLAUSE
-1 Dün B-NP B-RELCL B-RELCL
-2 yapılan I-NP I-RELCL I-RELCL
+1 Dün B-ADVP _ O
+2 yapılan I-NP B-RELCL B-RELCL
 3 toplantıda I-NP _ O
 4 kararlar B-NP _ O
 5 açıkça B-ADVP _ O
@@ -682,8 +682,8 @@
 
 # text = Denetim başlamadan belgeler düzgün bir şekilde hazırlandı.
 # columns = ID FORM OUTER_CHUNK INNER_CHUNK CLAUSE
-1 Denetim B-NP B-COMPCL B-COMPCL
-2 başlamadan B-VP I-COMPCL I-COMPCL
+1 Denetim B-NP _ B-COMPCL
+2 başlamadan B-VP B-COMPCL I-COMPCL
 3 belgeler B-NP _ O
 4 düzgün B-ADVP _ O
 5 bir I-ADVP _ O
@@ -693,8 +693,8 @@
 
 # text = Yazılımcının geliştirdiği araç hataları hızlıca buldu.
 # columns = ID FORM OUTER_CHUNK INNER_CHUNK CLAUSE
-1 Yazılımcının B-NP B-RELCL B-RELCL
-2 geliştirdiği I-NP I-RELCL I-RELCL
+1 Yazılımcının B-NP _ B-RELCL
+2 geliştirdiği I-NP B-RELCL I-RELCL
 3 araç I-NP _ O
 4 hataları B-NP _ O
 5 hızlıca B-ADVP _ O
@@ -703,8 +703,8 @@
 
 # text = Sunum bitince dinleyiciler soruları dikkatlice sordu.
 # columns = ID FORM OUTER_CHUNK INNER_CHUNK CLAUSE
-1 Sunum B-NP B-COMPCL B-COMPCL
-2 bitince B-VP I-COMPCL I-COMPCL
+1 Sunum B-NP _ B-COMPCL
+2 bitince B-VP B-COMPCL I-COMPCL
 3 dinleyiciler B-NP _ O
 4 soruları B-NP _ O
 5 dikkatlice B-ADVP _ O
@@ -713,9 +713,9 @@
 
 # text = Dünkü deneyde kaydedilen sonuçlar rapora eklendi.
 # columns = ID FORM OUTER_CHUNK INNER_CHUNK CLAUSE
-1 Dünkü B-NP B-RELCL B-RELCL
-2 deneyde I-NP I-RELCL I-RELCL
-3 kaydedilen I-NP I-RELCL I-RELCL
+1 Dünkü B-ADVP _ O
+2 deneyde I-NP _ B-RELCL
+3 kaydedilen I-NP B-RELCL I-RELCL
 4 sonuçlar I-NP _ O
 5 rapora B-NP _ O
 6 eklendi B-VP _ O
@@ -734,8 +734,8 @@
 
 # text = Kütüphanede bulunan eski kitap dikkatlice restore edildi.
 # columns = ID FORM OUTER_CHUNK INNER_CHUNK CLAUSE
-1 Kütüphanede B-NP B-RELCL B-RELCL
-2 bulunan I-NP I-RELCL I-RELCL
+1 Kütüphanede B-NP _ B-RELCL
+2 bulunan I-NP B-RELCL I-RELCL
 3 eski I-NP _ O
 4 kitap I-NP _ O
 5 dikkatlice B-ADVP _ O
@@ -745,8 +745,8 @@
 
 # text = Analiz tamamlanınca grafikler otomatik olarak üretildi.
 # columns = ID FORM OUTER_CHUNK INNER_CHUNK CLAUSE
-1 Analiz B-NP B-COMPCL B-COMPCL
-2 tamamlanınca B-VP I-COMPCL I-COMPCL
+1 Analiz B-NP _ B-COMPCL
+2 tamamlanınca B-VP B-COMPCL I-COMPCL
 3 grafikler B-NP _ O
 4 otomatik B-ADVP _ O
 5 olarak I-ADVP _ O
@@ -764,8 +764,8 @@
 
 # text = Öğretmenin seçtiği metin derste ayrıntılı biçimde çözümlendi.
 # columns = ID FORM OUTER_CHUNK INNER_CHUNK CLAUSE
-1 Öğretmenin B-NP B-RELCL B-RELCL
-2 seçtiği I-NP I-RELCL I-RELCL
+1 Öğretmenin B-NP _ B-RELCL
+2 seçtiği I-NP B-RELCL I-RELCL
 3 metin I-NP _ O
 4 derste B-NP _ O
 5 ayrıntılı B-ADVP _ O
