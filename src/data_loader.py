@@ -51,7 +51,7 @@ def read_conll_file(file_path):
     sentences = []
     current_sentence = []
 
-    with file_path.open("r", encoding="utf-8") as file:
+    with file_path.open("r", encoding="utf-8-sig") as file:
         for line_number, raw_line in enumerate(file, start=1):
             line = raw_line.strip()
 

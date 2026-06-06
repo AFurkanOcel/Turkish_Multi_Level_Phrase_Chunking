@@ -61,26 +61,42 @@ def calculate_metrics(y_true, y_pred):
     }
 
 
-def save_classification_report(y_true, y_pred, target, output_dir):
+def infer_model_name(model_path, target):
+    """Infer a model name from a saved model path."""
+    model_stem = Path(model_path).stem
+    suffix = f"_{target}"
+
+    if model_stem.endswith(suffix):
+        return model_stem[: -len(suffix)]
+
+    return model_stem
+
+
+def format_model_title(model_name):
+    """Convert an internal model name into a readable title."""
+    return model_name.replace("_", " ").title()
+
+
+def save_classification_report(y_true, y_pred, target, model_name, output_dir):
     """Save a text classification report to the metrics directory."""
     output_dir = Path(output_dir)
     output_dir.mkdir(parents=True, exist_ok=True)
 
     report = classification_report(y_true, y_pred, zero_division=0)
-    report_path = output_dir / f"logistic_regression_{target}_classification_report.txt"
+    report_path = output_dir / f"{model_name}_{target}_classification_report.txt"
     report_path.write_text(report, encoding="utf-8")
     return report_path
 
 
-def save_metrics_summary(metrics, target, output_dir):
+def save_metrics_summary(metrics, target, model_name, output_dir):
     """Save a compact metrics summary to the metrics directory."""
     output_dir = Path(output_dir)
     output_dir.mkdir(parents=True, exist_ok=True)
 
-    metrics_path = output_dir / f"logistic_regression_{target}_metrics.txt"
+    metrics_path = output_dir / f"{model_name}_{target}_metrics.txt"
     lines = [
         f"Target: {target}",
-        "Model: Logistic Regression",
+        f"Model: {format_model_title(model_name)}",
         f"Accuracy: {metrics['accuracy']:.4f}",
         f"Precision: {metrics['precision']:.4f}",
         f"Recall: {metrics['recall']:.4f}",
@@ -90,7 +106,7 @@ def save_metrics_summary(metrics, target, output_dir):
     return metrics_path
 
 
-def save_confusion_matrix(y_true, y_pred, target, output_dir):
+def save_confusion_matrix(y_true, y_pred, target, model_name, output_dir):
     """Save a confusion matrix heatmap as a PNG file."""
     output_dir = Path(output_dir)
     output_dir.mkdir(parents=True, exist_ok=True)
@@ -124,12 +140,12 @@ def save_confusion_matrix(y_true, y_pred, target, output_dir):
                 color=text_color,
             )
 
-    plt.title(f"Logistic Regression Confusion Matrix ({target})")
+    plt.title(f"{format_model_title(model_name)} Confusion Matrix ({target})")
     plt.xlabel("Predicted Label")
     plt.ylabel("True Label")
     plt.tight_layout()
 
-    figure_path = output_dir / f"logistic_regression_{target}_confusion_matrix.png"
+    figure_path = output_dir / f"{model_name}_{target}_confusion_matrix.png"
     plt.savefig(figure_path, dpi=300)
     plt.close()
     return figure_path
@@ -152,10 +168,15 @@ def evaluate_model(
     x, y_true = load_features_and_labels(data_path, target)
     y_pred = model.predict(x)
 
+    model_name = infer_model_name(model_path, target)
     metrics = calculate_metrics(y_true, y_pred)
-    report_path = save_classification_report(y_true, y_pred, target, metrics_dir)
-    metrics_path = save_metrics_summary(metrics, target, metrics_dir)
-    figure_path = save_confusion_matrix(y_true, y_pred, target, figures_dir)
+    report_path = save_classification_report(
+        y_true, y_pred, target, model_name, metrics_dir
+    )
+    metrics_path = save_metrics_summary(metrics, target, model_name, metrics_dir)
+    figure_path = save_confusion_matrix(
+        y_true, y_pred, target, model_name, figures_dir
+    )
 
     return {
         "target": target,

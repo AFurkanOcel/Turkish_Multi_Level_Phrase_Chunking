@@ -102,11 +102,12 @@ def run_evaluation_stage(eval_data_path, model_dir, metrics_dir, figures_dir):
     return evaluation_results
 
 
-def run_prediction_stage(sentence, prediction_output_path):
+def run_prediction_stage(sentence, prediction_output_path, model_dir):
     """Run prediction for a sample sentence and save CoNLL output."""
     rows = predict_sentence(
         sentence_text=sentence,
         model_name=DEFAULT_EVALUATION_MODEL,
+        model_dir=model_dir,
     )
     output_path = save_predictions_as_conll(rows, prediction_output_path)
 
@@ -160,6 +161,7 @@ def run_full_pipeline(args):
     run_prediction_stage(
         sentence=args.sentence,
         prediction_output_path=args.prediction_output_path,
+        model_dir=args.model_dir,
     )
 
     print_step("Error Analysis")
