@@ -10,7 +10,7 @@ from src.predict import predict_sentence, save_predictions_as_conll
 from src.train import MODEL_DISPLAY_NAMES, TARGET_COLUMNS, train_models
 
 
-DEFAULT_TRAIN_DATA_PATH = Path("data") / "annotated" / "full_dataset.conll"
+DEFAULT_TRAIN_DATA_PATH = Path("data") / "annotated" / "train.conll"
 DEFAULT_EVAL_DATA_PATH = Path("data") / "annotated" / "test.conll"
 DEFAULT_MODEL_DIR = Path("models")
 DEFAULT_METRICS_DIR = Path("outputs") / "metrics"

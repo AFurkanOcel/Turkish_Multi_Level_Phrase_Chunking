@@ -65,7 +65,14 @@ def main():
                 model_name=model_name,
             )
             output_path = save_predictions_as_conll(rows)
-            st.dataframe(rows_to_dataframe(rows), use_container_width=True)
+            prediction_table = rows_to_dataframe(rows)
+            st.dataframe(prediction_table, use_container_width=True)
+            st.download_button(
+                "Download CSV",
+                data=prediction_table.to_csv(index=False).encode("utf-8"),
+                file_name="predicted_sentence.csv",
+                mime="text/csv",
+            )
             st.success(f"Predicted CoNLL output saved to: {output_path}")
         except (FileNotFoundError, ValueError) as error:
             st.error(str(error))

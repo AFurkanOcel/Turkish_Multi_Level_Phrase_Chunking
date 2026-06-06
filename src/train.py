@@ -36,7 +36,7 @@ MODEL_DISPLAY_NAMES = {
     "mlp_classifier": "MLPClassifier",
 }
 
-DEFAULT_DATA_PATH = Path("data") / "annotated" / "full_dataset.conll"
+DEFAULT_DATA_PATH = Path("data") / "annotated" / "train.conll"
 DEFAULT_MODEL_DIR = Path("models")
 DEFAULT_METRICS_DIR = Path("outputs") / "metrics"
 DEFAULT_FIGURES_DIR = Path("outputs") / "figures"
