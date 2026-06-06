@@ -20,6 +20,11 @@ DEFAULT_PREDICTION_OUTPUT_PATH = (
 )
 DEFAULT_SENTENCE = "Dün akşam öğrenci makaleyi okudu."
 DEFAULT_EVALUATION_MODEL = "logistic_regression"
+TARGET_DISPLAY_NAMES = {
+    "outer": "OUTER_CHUNK",
+    "inner": "INNER_CHUNK",
+    "clause": "CLAUSE",
+}
 
 
 def print_step(title):
@@ -136,13 +141,62 @@ def run_error_analysis_stage(eval_data_path, model_dir, metrics_dir):
     return error_results
 
 
+def format_percent(value):
+    """Format a decimal metric value as a percentage."""
+    return f"{value * 100:.2f}%"
+
+
+def build_final_results_summary(training_result, metrics_dir):
+    """Build, print, and save the final best-model summary for each target."""
+    metrics_dir = Path(metrics_dir)
+    metrics_dir.mkdir(parents=True, exist_ok=True)
+    summary_path = metrics_dir / "final_results_summary.txt"
+
+    lines = [
+        "Final Results Summary",
+        "=====================",
+    ]
+
+    best_results = {}
+    for target in TARGET_COLUMNS:
+        target_results = [
+            row for row in training_result["results"] if row["target"] == target
+        ]
+        best_results[target] = max(target_results, key=lambda row: row["f1"])
+
+    for target, best_result in best_results.items():
+        target_title = TARGET_DISPLAY_NAMES[target]
+        lines.extend(
+            [
+                "",
+                target_title,
+                "-" * len(target_title),
+                f"Best model: {best_result['model_display_name']}",
+                f"Accuracy: {format_percent(best_result['accuracy'])}",
+                f"Precision: {format_percent(best_result['precision'])}",
+                f"Recall: {format_percent(best_result['recall'])}",
+                f"F1-score: {format_percent(best_result['f1'])}",
+            ]
+        )
+
+    summary_text = "\n".join(lines) + "\n"
+    summary_path.write_text(summary_text, encoding="utf-8")
+
+    print(summary_text)
+    print(f"Final results summary saved to: {summary_path}")
+    return {
+        "best_results": best_results,
+        "summary_path": summary_path,
+    }
+
+
 def run_full_pipeline(args):
     """Run the complete project pipeline with one command."""
     print_step("Data Loading")
     load_and_summarize_data(args.train_data_path, args.eval_data_path)
 
     print_step("Training and Model Comparison")
-    run_training_stage(
+    training_result = run_training_stage(
         train_data_path=args.train_data_path,
         model_dir=args.model_dir,
         metrics_dir=args.metrics_dir,
@@ -170,6 +224,9 @@ def run_full_pipeline(args):
         model_dir=args.model_dir,
         metrics_dir=args.metrics_dir,
     )
+
+    print_step("Final Results Summary")
+    build_final_results_summary(training_result, args.metrics_dir)
 
     print("\nPipeline completed successfully.")
 
