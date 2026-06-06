@@ -1,2 +1,34 @@
-# Placeholder for test data.
-# Format: ID FORM OUTER_CHUNK INNER_CHUNK CLAUSE
+# text = Öğrenciler dersten sonra kantinde konuştu.
+# columns = ID FORM OUTER_CHUNK INNER_CHUNK CLAUSE
+1 Öğrenciler B-NP _ O
+2 dersten B-NP _ O
+3 sonra B-ADVP _ O
+4 kantinde B-NP _ O
+5 konuştu B-VP _ O
+6 . O _ O
+
+# text = Yağmur başlayınca takım maçı erteledi.
+# columns = ID FORM OUTER_CHUNK INNER_CHUNK CLAUSE
+1 Yağmur B-NP _ O
+2 başlayınca B-VP _ B-COMPCL
+3 takım B-NP _ O
+4 maçı B-NP _ O
+5 erteledi B-VP _ O
+6 . O _ O
+
+# text = Müdürün imzaladığı belge arşive kaldırıldı.
+# columns = ID FORM OUTER_CHUNK INNER_CHUNK CLAUSE
+1 Müdürün B-NP B-RELCL B-RELCL
+2 imzaladığı I-NP I-RELCL I-RELCL
+3 belge I-NP _ O
+4 arşive B-NP _ O
+5 kaldırıldı B-VP _ O
+6 . O _ O
+
+# text = Sporcular antrenmandan sonra dinlendi.
+# columns = ID FORM OUTER_CHUNK INNER_CHUNK CLAUSE
+1 Sporcular B-NP _ O
+2 antrenmandan B-NP _ O
+3 sonra B-ADVP _ O
+4 dinlendi B-VP _ O
+5 . O _ O

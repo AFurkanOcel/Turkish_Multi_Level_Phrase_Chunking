@@ -24,6 +24,7 @@ except ImportError:
 
 DEFAULT_DATA_PATH = Path("data") / "annotated" / "test.conll"
 DEFAULT_MODEL_DIR = Path("models")
+DEFAULT_MODEL_NAME = "logistic_regression"
 DEFAULT_METRICS_DIR = Path("outputs") / "metrics"
 DEFAULT_FIGURES_DIR = Path("outputs") / "figures"
 
@@ -189,6 +190,11 @@ def evaluate_model(
     }
 
 
+def default_model_path(model_name, target, model_dir=DEFAULT_MODEL_DIR):
+    """Build a default model path from a model family and target."""
+    return Path(model_dir) / f"{model_name}_{target}.joblib"
+
+
 def parse_args():
     """Parse command-line arguments."""
     parser = argparse.ArgumentParser(
@@ -202,8 +208,18 @@ def parse_args():
     )
     parser.add_argument(
         "--model-path",
-        required=True,
+        default=None,
         help="Path to the trained joblib model.",
+    )
+    parser.add_argument(
+        "--model",
+        default=DEFAULT_MODEL_NAME,
+        help="Model family name used when --model-path is not provided.",
+    )
+    parser.add_argument(
+        "--model-dir",
+        default=DEFAULT_MODEL_DIR,
+        help="Directory containing trained joblib models.",
     )
     parser.add_argument(
         "--data-path",
@@ -226,8 +242,13 @@ def parse_args():
 def main():
     """Run model evaluation from the command line."""
     args = parse_args()
+    model_path = args.model_path
+
+    if model_path is None:
+        model_path = default_model_path(args.model, args.target, args.model_dir)
+
     result = evaluate_model(
-        model_path=args.model_path,
+        model_path=model_path,
         data_path=args.data_path,
         target=args.target,
         metrics_dir=args.metrics_dir,

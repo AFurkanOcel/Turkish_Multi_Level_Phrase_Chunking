@@ -210,11 +210,13 @@ def train_models(
 
     comparison_path = save_model_comparison_csv(results, metrics_dir)
     figure_path = save_model_comparison_plot(results, figures_dir)
+    label_distribution_path = save_label_distribution_plot(data_path, figures_dir)
 
     return {
         "results": results,
         "comparison_path": comparison_path,
         "figure_path": figure_path,
+        "label_distribution_path": label_distribution_path,
     }
 
 
@@ -311,6 +313,42 @@ def save_model_comparison_plot(results, figures_dir):
     return figure_path
 
 
+def save_label_distribution_plot(data_path, figures_dir):
+    """Save label distribution charts for all project targets."""
+    figures_dir = Path(figures_dir)
+    figures_dir.mkdir(parents=True, exist_ok=True)
+    figure_path = figures_dir / "label_distribution.png"
+
+    sentences = read_conll_file(data_path)
+    target_names = list(TARGET_COLUMNS.keys())
+
+    fig, axes = plt.subplots(1, len(target_names), figsize=(15, 5))
+    if len(target_names) == 1:
+        axes = [axes]
+
+    for axis, target in zip(axes, target_names):
+        labels = extract_target_labels(sentences, target)
+        label_counts = {}
+        for label in labels:
+            label_counts[label] = label_counts.get(label, 0) + 1
+
+        sorted_items = sorted(label_counts.items(), key=lambda item: item[0])
+        x_labels = [item[0] for item in sorted_items]
+        counts = [item[1] for item in sorted_items]
+
+        axis.bar(x_labels, counts)
+        axis.set_title(f"{target} Label Distribution")
+        axis.set_xlabel("Label")
+        axis.set_ylabel("Count")
+        axis.tick_params(axis="x", rotation=45)
+
+    plt.tight_layout()
+    plt.savefig(figure_path, dpi=300)
+    plt.close()
+
+    return figure_path
+
+
 def expand_targets(target):
     """Expand a target argument into concrete target names."""
     if target == "all":
@@ -400,6 +438,7 @@ def main():
 
     print(f"Model comparison CSV saved to: {result['comparison_path']}")
     print(f"Model comparison figure saved to: {result['figure_path']}")
+    print(f"Label distribution figure saved to: {result['label_distribution_path']}")
 
 
 if __name__ == "__main__":

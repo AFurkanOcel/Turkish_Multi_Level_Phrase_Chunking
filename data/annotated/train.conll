@@ -1,2 +1,70 @@
-# Placeholder for training data.
-# Format: ID FORM OUTER_CHUNK INNER_CHUNK CLAUSE
+# text = Dün akşam öğrenci makaleyi okudu.
+# columns = ID FORM OUTER_CHUNK INNER_CHUNK CLAUSE
+1 Dün B-ADVP _ O
+2 akşam I-ADVP _ O
+3 öğrenci B-NP _ O
+4 makaleyi B-NP _ O
+5 okudu B-VP _ O
+6 . O _ O
+
+# text = Toplantıdan erken çıkan öğrenci geldi.
+# columns = ID FORM OUTER_CHUNK INNER_CHUNK CLAUSE
+1 Toplantıdan B-NP B-RELCL B-RELCL
+2 erken I-NP I-RELCL I-RELCL
+3 çıkan I-NP I-RELCL I-RELCL
+4 öğrenci I-NP _ O
+5 geldi B-VP _ O
+6 . O _ O
+
+# text = Ayşe kütüphanede kitabı dikkatlice okudu.
+# columns = ID FORM OUTER_CHUNK INNER_CHUNK CLAUSE
+1 Ayşe B-NP _ O
+2 kütüphanede B-NP _ O
+3 kitabı B-NP _ O
+4 dikkatlice B-ADVP _ O
+5 okudu B-VP _ O
+6 . O _ O
+
+# text = Hocanın önerdiği makale sınıfta tartışıldı.
+# columns = ID FORM OUTER_CHUNK INNER_CHUNK CLAUSE
+1 Hocanın B-NP B-RELCL B-RELCL
+2 önerdiği I-NP I-RELCL I-RELCL
+3 makale I-NP _ O
+4 sınıfta B-NP _ O
+5 tartışıldı B-VP _ O
+6 . O _ O
+
+# text = Çocuklar bahçede hızlıca koştu.
+# columns = ID FORM OUTER_CHUNK INNER_CHUNK CLAUSE
+1 Çocuklar B-NP _ O
+2 bahçede B-NP _ B-COMPCL
+3 hızlıca B-ADVP _ I-COMPCL
+4 koştu B-VP _ I-COMPCL
+5 . O _ O
+
+# text = Genç araştırmacı yeni raporu sundu.
+# columns = ID FORM OUTER_CHUNK INNER_CHUNK CLAUSE
+1 Genç B-NP _ O
+2 araştırmacı I-NP _ O
+3 yeni B-NP _ O
+4 raporu I-NP _ O
+5 sundu B-VP _ O
+6 . O _ O
+
+# text = Öğretmenin hazırladığı sınav zordu.
+# columns = ID FORM OUTER_CHUNK INNER_CHUNK CLAUSE
+1 Öğretmenin B-NP B-RELCL B-RELCL
+2 hazırladığı I-NP I-RELCL I-RELCL
+3 sınav I-NP _ O
+4 zordu B-ADJP _ O
+5 . O _ O
+
+# text = Ali eve gelince annesi yemek hazırladı.
+# columns = ID FORM OUTER_CHUNK INNER_CHUNK CLAUSE
+1 Ali B-NP _ O
+2 eve B-NP _ B-COMPCL
+3 gelince B-VP _ I-COMPCL
+4 annesi B-NP _ O
+5 yemek B-NP _ O
+6 hazırladı B-VP _ O
+7 . O _ O
