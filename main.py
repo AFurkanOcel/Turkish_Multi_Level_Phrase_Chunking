@@ -152,10 +152,7 @@ def build_final_results_summary(training_result, metrics_dir):
     metrics_dir.mkdir(parents=True, exist_ok=True)
     summary_path = metrics_dir / "final_results_summary.txt"
 
-    lines = [
-        "Final Results Summary",
-        "=====================",
-    ]
+    lines = []
 
     best_results = {}
     for target in TARGET_COLUMNS:
