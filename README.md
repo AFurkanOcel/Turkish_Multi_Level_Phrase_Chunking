@@ -466,7 +466,7 @@ This project demonstrates:
 
 ## Author
 
-**Ahmet Furkan ÖCEL**
+**A. Furkan ÖCEL**
 
 ---
 
