@@ -220,6 +220,16 @@ The model comparison stage evaluates all required models and writes detailed out
 
 ---
 
+## Project Report
+
+The final Turkish project report is available here:
+
+[report/project_report_Turkish.pdf](report/project_report_Turkish.pdf)
+
+The report explains the dataset design, annotation consistency process, feature extraction, model comparison results, error analysis, and final conclusions in Turkish.
+
+---
+
 ## Architecture
 
 The project is organized as a modular NLP pipeline.
