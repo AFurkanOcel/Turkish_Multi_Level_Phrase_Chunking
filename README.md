@@ -281,7 +281,7 @@ Turkish_Multi_Level_Phrase_Chunking/
 │   ├── metrics/
 │   └── predictions/
 ├── report/
-│   └── project_report.pdf
+│   └── project_report_Turkish.pdf
 └── src/
     ├── data_loader.py
     ├── error_analysis.py
@@ -410,6 +410,7 @@ python -m streamlit run app/streamlit_app.py
 | Model comparison chart | `outputs/figures/model_comparison.png` |
 | Label distribution chart | `outputs/figures/label_distribution.png` |
 | Predicted CoNLL sentence | `outputs/predictions/predicted_sentence.conll` |
+| Turkish project report | `report/project_report_Turkish.pdf` |
 
 ---
 
@@ -445,7 +446,7 @@ Possible future improvements:
 * Add morphological analysis features.
 * Add cross-validation for more stable model comparison.
 * Add per-label error summaries to the Streamlit interface.
-* Export a polished PDF report after final project review.
+* Add a more detailed experimental appendix for larger future datasets.
 
 ---
 
