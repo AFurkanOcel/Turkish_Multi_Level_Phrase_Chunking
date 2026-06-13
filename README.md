@@ -12,7 +12,6 @@ Classical machine learning pipeline for token-level Turkish outer chunk, inner c
   <img src="https://img.shields.io/badge/Models-Classical%20ML-purple"/>
   <img src="https://img.shields.io/badge/UI-Streamlit-red"/>
   <img src="https://img.shields.io/badge/Language-Turkish-lightgrey"/>
-  <img src="https://img.shields.io/badge/License-MIT-brightgreen"/>
   <img src="https://img.shields.io/badge/Status-Completed-brightgreen"/>
 </p>
 
